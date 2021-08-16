@@ -1,0 +1,22 @@
+{
+  "name": "employee-review-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/Pandey1996/employee_review_system/src/master/"
+  },
+  "author": "Amit Kumar Pandey",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7",
+    "passport": "^0.4.1"
+  }
+}
