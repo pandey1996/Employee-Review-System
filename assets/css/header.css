@@ -1,0 +1,41 @@
+Header{
+    height: 10%;
+    width: 100%;
+    margin: auto;
+    background-color:#f3f7f7;
+    margin-bottom: 5%;
+}
+#logo-container{
+    height: 80%;
+    width: 30%;
+    color: coral;
+    position: relative;
+    left: 1%;
+    top: 15%;
+    display: inline;
+}
+#logo-container>p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 110%;
+    font-weight: 700;
+    margin: auto;
+    display: inline-block;
+}
+#SignUp{
+    height: 80%;
+    position: relative;
+    left: 80%;
+    right: 5%;
+    display: inline-block;
+    width: 5%;
+}
+#header-signin{
+    height: 50%;
+    width:90%;
+    margin: auto;
+    background-color: #f3f7f7;
+    color: grey;
+    font-weight: 700;
+    font-size: small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

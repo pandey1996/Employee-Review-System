@@ -1,6 +1,18 @@
-<form action="/employees/createsession" method="POST">
-    <input name="username">
-    <input name="password">
-    <button type="submit">Sign In</button>
-</form>
-<button formaction="/employees/signUp" formmethod="GET">Sign Up</button>
+<div id='SignIn-form-main-container'>
+    <form action="/employees/createsession" method="POST">
+        <div id="auth-block">
+            <div id="block-header">
+                <p>Log In</p>
+            </div>
+            <div id="input-block">
+                <input name="username" placeholder="email" type="email">
+                <input name="password" placeholder="password" type="password">
+            </div>
+            <div id="buttons-block">
+                <button type="submit">Sign In</button>
+                <button formaction="/employees/signUp" formmethod="GET">Sign Up</button>    
+            </div>
+        </div>
+    </form>
+</div>
+
