@@ -7,14 +7,17 @@ passport.use(new LocalStrategy(
     function(username, password, done){
         Employee.findOne({
             email: username,
-        },function(err){
+        },function(err,user){
             if(err){ console.error.bind("Error",err); return done(err);}
             if(!user){
+                console.log('Wrong Username');
                 return done(null,false,{ message: "User Not Found!!"});
             }
-            if(!user.validPassword(password)){
+            if(user.password!=password){
+                console.log('Wrong Password');
                 return done(null,false, {message: "Password not Valid"});
             }
+            console.log('Everything OK');
             return done(null,user);
         });
         

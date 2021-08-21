@@ -1,5 +1,6 @@
 const employeeDB=require('../models/employees');
 const empID=require('../config/employeeID_gen');
+const passport=require('passport');
 
 module.exports.signUp=function(req,res){
     res.render('signup');
@@ -28,4 +29,9 @@ module.exports.createUser=function(req,res){
             }
         });
     }
+}
+
+module.exports.createSession=function(req, res){
+    return res.redirect('/');
+
 }
