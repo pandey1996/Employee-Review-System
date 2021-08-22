@@ -3,7 +3,9 @@ const LocalStrategy=require('passport-local').Strategy;
 const Employee=require('../models/employees');
 
 // User Authentication using Passport
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy({
+        usernameField: 'username',
+    },
     function(username, password, done){
         Employee.findOne({
             email: username,
@@ -30,7 +32,7 @@ passport.serializeUser(function(user,done){
 });
 //Deserializing the user removing cookie from the store
 passport.deserializeUser(function(id,done){
-    Employee.findById(id, function(err){
+    Employee.findById(id, function(err,user){
         if(err){ 
             console.log('Error in finding the user');
             return done(err);
@@ -45,6 +47,7 @@ passport.checkAuthentication=function(req, res, next){
         return next();
     }
     else{
+        req.flash('error','Please Sign in to Access');
         return res.redirect('/employees/signin');
     }
 }

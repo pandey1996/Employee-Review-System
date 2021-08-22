@@ -1,7 +1,18 @@
-<form action="/employees/newEmployee" method="POST">
-    <input name="email">
-    <input name="password">
-    <input name="conpass" placeholder="confirm Password">
-    <input name="name">
-    <button type="submit">Create</button>
-</form>
+<div id='SignUp-form-main-container'>
+    <form action="/employees/newEmployee" method="POST">
+        <div id="auth-block">
+            <div id="block-header">
+                <p>Sign Up</p>
+            </div>
+            <div id="input-block">
+                <input name="name" placeholder="Name">
+                <input name="email" placeholder="email">
+                <input name="password" placeholder="password" type="password">
+                <input name="conpass" placeholder="confirm Password">
+            </div>
+            <div id="buttons-block">
+                <button type="submit">Create</button>
+            </div>
+        </div>   
+    </form>
+</div>

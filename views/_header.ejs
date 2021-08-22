@@ -1,8 +1,14 @@
-<Header id="header">
+<Header id="header"> 
     <div id="logo-container">
         <p>Employee Review Portal</p>
     </div>
-    <div id="SignUp">
-        <a href="/employees/signup" type="GET"><button id="header-signin" type="submit">Sign In</button></a>
-    </div>
+    <% if(locals.user) {%>
+        <div id="SignIn">
+            <a href="/employees/signout" type="GET"><button id="header-signin" type="submit">Sign Out</button></a>
+        </div>
+    <%}else{%>
+        <div id="SignIn">
+            <a href="/employees/signin" type="GET"><button id="header-signin" type="submit">Sign In</button></a>
+        </div>
+    <%}%>
 </Header>

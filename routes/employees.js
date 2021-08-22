@@ -5,9 +5,9 @@ const passport=require('passport');
 
 router.get('/signIn',employees_controller.signIn);
 router.get('/signup',employees_controller.signUp);
+router.get('/signout',employees_controller.deleteSession);
 router.post('/newEmployee',employees_controller.createUser);
 router.post('/createsession',passport.authenticate('local',{
-    successRedirect: '/',
     failureRedirect: '/employees/signin',
     failureFlash: true
 }),employees_controller.createSession);

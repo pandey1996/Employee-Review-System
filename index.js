@@ -6,6 +6,8 @@ const expressLayouts=require('express-ejs-layouts');
 const db=require('./config/mongoose');
 const mongoose=require('mongoose');
 const sassMiddleware=require('node-sass-middleware');
+const flash=require('connect-flash');
+const customMiddleware=require('./config/middleware');
 
 
 //Passport JS variables
@@ -50,7 +52,10 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.setAuthenticatedEmployee);
 
+app.use(flash());
+app.use(customMiddleware.setflash);
 
 //use express Router
 app.use('/',require('./routes'));
