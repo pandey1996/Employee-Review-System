@@ -5,18 +5,21 @@ Header{
     background-color:#f3f7f7;
     margin-bottom: 5%;
 }
+#top-bar{
+    width:80%;
+    margin: auto;
+}
 #logo-container{
     height: 80%;
     width: 30%;
     color: coral;
     position: relative;
-    left: 1%;
     top: 15%;
     display: inline;
 }
 #logo-container>p{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 110%;
+    font-size: 130%;
     font-weight: 700;
     margin: auto;
     display: inline-block;
@@ -36,6 +39,7 @@ Header{
     background-color: #f3f7f7;
     color: grey;
     font-weight: 700;
-    font-size: small;
+    font-size: 70%;
+    text-overflow: clip;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

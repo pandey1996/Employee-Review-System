@@ -22,8 +22,21 @@ const employeeSchema = new mongoose.Schema({
     password : {
         type : String,
         required : true
-    }
-
+    },
+    to:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'EmployeeDB'
+        }
+    ],
+    from:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ],
+},{
+        timestamps: true
 });
 
 const employeeDB=mongoose.model('EmployeeDB',employeeSchema);

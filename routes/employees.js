@@ -12,5 +12,6 @@ router.post('/createsession',passport.authenticate('local',{
     failureFlash: true
 }),employees_controller.createSession);
 
-
+router.get('/adminPage',employees_controller.adminPage);
+router.post('/set-reviewer',employees_controller.setReviewers);
 module.exports=router;

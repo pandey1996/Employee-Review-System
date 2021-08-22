@@ -1,14 +1,19 @@
 <Header id="header"> 
-    <div id="logo-container">
-        <p>Employee Review Portal</p>
+    <div id="top-bar">
+        <div id="logo-container">
+            <p>Employee Review Portal</p>
+        </div>
+        <% if(locals.user) {%>
+            <div id="SignIn">
+                <a href="/employees/signout" type="GET"><button id="header-signin" type="submit">Sign Out</button></a>
+            </div>
+            <div>
+                
+            </div>
+        <%}else{%>
+            <div id="SignIn">
+                <a href="/employees/signin" type="GET"><button id="header-signin" type="submit">Sign In</button></a>
+            </div>
+        <%}%>
     </div>
-    <% if(locals.user) {%>
-        <div id="SignIn">
-            <a href="/employees/signout" type="GET"><button id="header-signin" type="submit">Sign Out</button></a>
-        </div>
-    <%}else{%>
-        <div id="SignIn">
-            <a href="/employees/signin" type="GET"><button id="header-signin" type="submit">Sign In</button></a>
-        </div>
-    <%}%>
 </Header>
