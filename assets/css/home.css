@@ -1,0 +1,11 @@
+main{
+    height:90%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+main>div{
+    width: 45%;
+    margin: auto;
+}

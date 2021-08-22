@@ -1,1 +1,21 @@
 <h1>Employee Review Portal</h1>
+<main>
+    <div>
+        <% for(r of recipients){ %> 
+            <div class="available-recipients">
+                <form action="/reviews/newReview/<%=r.id%>" method="GET">
+                    <p><%=r.name%></p>
+                    <textarea name="newReview"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        <%}%>
+    </div>
+    <div>
+        <% for (r of reviews){%>
+            <p><%=r.to%></p>
+            <p><%=r.from%></p>
+            <p><%=r.review%></p>
+        <%}%>
+    </div>
+</main>

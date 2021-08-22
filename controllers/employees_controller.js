@@ -108,6 +108,8 @@ module.exports.setReviewers=async function(req,res){
 
             reviewer.to.push(recipient);
             reviewer.save();
+            recipient.from.push(reviewer);
+            recipient.save();
             req.flash('Reviewer Added');
             return res.redirect('back');
         }
