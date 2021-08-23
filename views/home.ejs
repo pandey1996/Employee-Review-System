@@ -1,6 +1,6 @@
-<h1>Employee Review Portal</h1>
 <main>
     <div>
+        <p>To Review</p>
         <% for(r of recipients){ %> 
             <div class="available-recipients">
                 <form action="/reviews/newReview/<%=r.id%>" method="GET">
@@ -12,9 +12,9 @@
         <%}%>
     </div>
     <div>
+        <p>My Reviews</p>
         <% for (r of reviews){%>
-            <p><%=r.to%></p>
-            <p><%=r.from%></p>
+            <p><%=r.name%></p>
             <p><%=r.review%></p>
         <%}%>
     </div>

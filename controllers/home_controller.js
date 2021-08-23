@@ -5,7 +5,7 @@ module.exports.home=async function(req, res){
         res.redirect('/employees/signin');
     }
     let employee=await employeeDB.findById(req.user._id);
-    let reviews=await reviewDB.find({
+    let rev=await reviewDB.find({
         to: req.user._id
     });
     var recipients=[];
@@ -14,7 +14,17 @@ module.exports.home=async function(req, res){
         //console.log(employee.to[i]);
         recipients.push(tmp);
     }
+    var reviews=[];
 
+    for(let i=0;i<rev.length;i++){
+        let tmp=await employeeDB.findById(rev[i].from);
+        //console.log(tmp);
+        let tmp2={
+            name: tmp.name,
+            review: rev[i].review
+        };
+        reviews.push(tmp2);
+    }
     return res.render('home',{
         recipients: recipients,
         reviews: reviews
