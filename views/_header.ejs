@@ -7,12 +7,14 @@
             <div id="SignIn">
                 <a href="/employees/signout" type="GET"><button id="header-signin" type="submit">Sign Out</button></a>
             </div>
-            <div>
-                
-            </div>
         <%}else{%>
             <div id="SignIn">
                 <a href="/employees/signin" type="GET"><button id="header-signin" type="submit">Sign In</button></a>
+            </div>
+        <%}%>
+        <% if(locals.user && locals.user.isAdmin==true) {%>
+            <div id="SignIn">
+                <a href="/admin/main" type="GET"><button id="header-signin" type="submit">Admin Page</button></a>
             </div>
         <%}%>
     </div>

@@ -4,6 +4,7 @@ const passport=require('passport');
 const admin_controller=require('../controllers/admins_controller');
 
 router.get('/main',passport.checkAuthentication,admin_controller.adminPage);
-router.get('/setReviewers',passport.checkAuthentication,admin_controller.setReviewers);
+router.post('/setReviewers',passport.checkAuthentication,admin_controller.setReviewers);
+router.post('/newAdmin',passport.checkAuthentication,admin_controller.newAdmin);
 
 module.exports=router;
