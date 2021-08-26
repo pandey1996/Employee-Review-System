@@ -1,21 +1,32 @@
 <main>
-    <div>
-        <p>To Review</p>
+    <div id="left-section">
+        <div class="Section-heading">
+            <p>To Review</p>
+        </div>
         <% for(r of recipients){ %> 
             <div class="available-recipients">
                 <form action="/reviews/newReview/<%=r.id%>" method="GET">
-                    <p><%=r.name%></p>
-                    <textarea name="newReview"></textarea>
-                    <button type="submit">Submit</button>
+                    <p>To: <%=r.name%></p>
+                    <div class="new-review-block">
+                        <textarea name="newReview" rows="5"></textarea>
+                        <button type="submit">Submit</button>
+                    </div>
                 </form>
             </div>
         <%}%>
     </div>
-    <div>
-        <p>My Reviews</p>
+    <div id="right-section">
+        <div class="Section-heading">
+            <p>My Reviews</p>
+        </div>
         <% for (r of reviews){%>
-            <p><%=r.name%></p>
-            <p><%=r.review%></p>
+            <div class="my-reviews">
+                <p>From: <%=r.name%></p>
+                <div>
+                    <p><%=r.review%></p>
+                </div>
+                <p>Updated At: <%=r.updated%></p>
+            </div>
         <%}%>
     </div>
 </main>

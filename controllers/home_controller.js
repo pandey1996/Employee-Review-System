@@ -18,10 +18,11 @@ module.exports.home=async function(req, res){
 
     for(let i=0;i<rev.length;i++){
         let tmp=await employeeDB.findById(rev[i].from);
-        //console.log(tmp);
+        console.log(tmp);
         let tmp2={
             name: tmp.name,
-            review: rev[i].review
+            review: rev[i].review,
+            updated: rev[i].updatedAt
         };
         reviews.push(tmp2);
     }
